@@ -10,3 +10,6 @@ vms:
   hosts:
     feds00:
       ansible_host: fe80::5054:ff:fe4e:928a%virbr0
+    feds01:
+      ansible_host: fe80::5054:ff:fe4d:2508%virbr0
+

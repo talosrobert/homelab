@@ -1,0 +1,8 @@
+- name: Configure SSHD.
+  ansible.builtin.template:
+    src: homelab.conf.j2
+    dest: /etc/ssh/sshd_config.d/99-homelab.conf
+    owner: root
+    group: root
+    mode: '0600'
+  notify: restart_sshd
