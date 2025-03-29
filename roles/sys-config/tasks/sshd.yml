@@ -1,3 +1,4 @@
+---
 - name: Configure SSHD.
   ansible.builtin.template:
     src: homelab.conf.j2
