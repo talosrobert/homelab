@@ -1,0 +1,15 @@
+---
+- name: Add docker-ce-stable/containerd repository
+  ansible.builtin.yum_repository:
+    name: docker-ce-stable
+    baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/stable
+    description: docker-ce-stable
+    enabled: 1
+    gpgcheck: 1
+    gpgkey: https://download.docker.com/linux/fedora/gpg
+
+- name: Install containerd packages
+  ansible.builtin.dnf:
+    name: containerd.io
+    state: present
+  notify: "enable_containerd"

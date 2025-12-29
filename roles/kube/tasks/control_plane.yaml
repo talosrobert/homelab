@@ -1,0 +1,9 @@
+---
+- name: Ensure cluster-endpoint DNS record is set
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    regexp: '^192\.168\.201\.11'
+    line: 192.168.201.11 cluster-api-endpoint
+    owner: root
+    group: root
+    mode: '0644'

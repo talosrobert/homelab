@@ -1,0 +1,15 @@
+---
+- ansible.builtin.import_tasks:
+    file: install_container_runtime.yaml
+
+- name: Install kubernetes packages
+  ansible.builtin.dnf:
+    name:
+      - kubernetes1.34-kubeadm
+      - kubernetes1.34-systemd
+    state: latest
+  notify: enable_kubelet
+
+- ansible.builtin.import_tasks:
+    file: control_plane.yaml
+  when: "'control_plane' in group_names"

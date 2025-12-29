@@ -1,0 +1,14 @@
+---
+- name: Ensure kubelet service is enabled and started
+  ansible.builtin.service:
+    name: kubelet
+    enabled: true
+    state: restarted
+  listen: "enable_kubelet"
+
+- name: Ensure containerd service is enabled and started
+  ansible.builtin.service:
+    name: containerd
+    enabled: true
+    state: restarted
+  listen: "enable_containerd"

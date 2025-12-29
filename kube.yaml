@@ -1,0 +1,7 @@
+---
+- hosts: kube
+  become: yes
+  tasks:
+    - ansible.builtin.import_role:
+        name: kube
+
