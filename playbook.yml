@@ -1,6 +1,0 @@
----
-- hosts: feds01
-  become: true
-  roles:
-    - 'sys-config'
-

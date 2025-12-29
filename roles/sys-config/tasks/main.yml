@@ -1,3 +1,0 @@
----
-- name: Import SSHD config tasks.
-  ansible.builtin.import_tasks: sshd.yml
